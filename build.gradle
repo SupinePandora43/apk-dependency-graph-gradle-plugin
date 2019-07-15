@@ -1,0 +1,10 @@
+plugins {
+    id 'java-gradle-plugin'
+}
+dependencies {
+	testImplementation('org.junit.jupiter:junit-jupiter:5.4.2')
+	implementation gradleApi()
+}
+test {
+	useJUnitPlatform()
+}
