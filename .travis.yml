@@ -1,0 +1,7 @@
+language: java
+install: skip
+before_script: cmod +x ./gradlew
+script: ./gradlew jar test
+branches:
+  only:
+    - master

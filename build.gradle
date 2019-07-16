@@ -1,10 +1,16 @@
 plugins {
     id 'java-gradle-plugin'
+	id 'com.adarshr.test-logger' version '1.7.0' // https://github.com/radarsh/gradle-test-logger-plugin
+}
+repositories {
+    mavenCentral()
+}
+testlogger {
+    theme 'standard-parallel' // theme
+    slowThreshold 0           // show time
 }
 dependencies {
-	testImplementation('org.junit.jupiter:junit-jupiter:5.4.2')
-	implementation gradleApi()
-}
-test {
-	useJUnitPlatform()
+	testImplementation 'org.hamcrest:hamcrest:2.1' // test dependency
+	testImplementation 'junit:junit:4.12'          // test dependency
+	implementation gradleApi()                     // gradle api (self generated (0_0) )
 }

@@ -5,7 +5,7 @@ import org.gradle.api.*;
 /**
  * some javadoc
  */
-class APKGraphPlugin implements Plugin<Project> {
+public class APKGraphPlugin implements Plugin<Project> {
 
 	@Override
 	public void apply(Project project) {
