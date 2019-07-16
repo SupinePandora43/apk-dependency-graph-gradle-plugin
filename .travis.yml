@@ -1,6 +1,6 @@
 language: java
 install: skip
-before_script: cmod +x ./gradlew
+before_script: chmod +x ./gradlew
 script: ./gradlew jar test
 branches:
   only:
