@@ -24,5 +24,8 @@ public class APKGraphPluginTest {
 		assertTrue(this.project.getExtensions().getByName("graph") instanceof GraphExtension);
 	}
 
-
+	@Test
+	public void GraphTask() {
+		this.project.getTasks().getByName("graph").getActions().get(0).execute(this.project.getTasks().getByName("graph"));
+	}
 }
