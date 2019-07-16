@@ -1,18 +1,18 @@
 package com.supinepandora43.graph_plugin;
 
-import static org.junit.Assert.assertTrue;
-
 import org.gradle.api.Project;
 import org.gradle.testfixtures.ProjectBuilder;
-import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertTrue;
+
 public class APKGraphPluginTest {
-	private Project project = null;
-	@Before
-	public void setUp() {
+	private Project project;
+
+	public APKGraphPluginTest() {
 		this.project = ProjectBuilder.builder().build();
 		this.project.getPluginManager().apply(APKGraphPlugin.class);
+		//((DefaultProject) this.project).evaluate();
 	}
 	@Test
 	public void GraphTaskType() {
