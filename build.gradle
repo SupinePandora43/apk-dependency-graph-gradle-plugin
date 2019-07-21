@@ -2,7 +2,6 @@ plugins {
 	id 'java-gradle-plugin'
 	id 'com.adarshr.test-logger' version '1.7.0' // https://github.com/radarsh/gradle-test-logger-plugin
 }
-System.setProperty("file.encoding", "UTF-8");
 repositories {
     mavenCentral()
 	maven { url 'https://jitpack.io' }

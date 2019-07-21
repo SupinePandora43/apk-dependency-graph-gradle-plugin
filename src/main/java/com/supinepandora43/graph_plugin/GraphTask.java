@@ -29,6 +29,7 @@ public class GraphTask extends DefaultTask {
 				"}";
 		File filterFile = getProject().file(getProject().getBuildDir() + s + "graph" + s + "filter.json");
 		try {
+			filterFile.getParentFile().mkdirs();
 			filterFile.createNewFile();
 			FileWriter FW = new FileWriter(filterFile.getAbsolutePath());
 			FW.write(filterText);
