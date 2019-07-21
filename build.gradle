@@ -1,7 +1,8 @@
 plugins {
-    id 'java-gradle-plugin'
+	id 'java-gradle-plugin'
 	id 'com.adarshr.test-logger' version '1.7.0' // https://github.com/radarsh/gradle-test-logger-plugin
 }
+System.setProperty("file.encoding", "UTF-8");
 repositories {
     mavenCentral()
 	maven { url 'https://jitpack.io' }
@@ -11,8 +12,8 @@ testlogger {
     slowThreshold 0           // show time
 }
 dependencies {
-	testImplementation 'org.hamcrest:hamcrest:2.1' // test dependency
-	testImplementation 'junit:junit:4.12'          // test dependency
-	implementation gradleApi()                     // gradle api (self generated (0_0) )
-	implementation 'com.github.alexzaitsev:apk-dependency-graph:0.1.5'
+	testImplementation 'org.hamcrest:hamcrest:2.1'                     // test dependency
+	testImplementation 'junit:junit:4.12'                              // test dependency
+	implementation gradleApi()                                         // gradle api (self generated (0_0) )
+	implementation 'com.github.alexzaitsev:apk-dependency-graph:0.2.0'
 }
