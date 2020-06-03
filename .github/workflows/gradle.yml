@@ -25,3 +25,8 @@ jobs:
     - run: ./gradlew test -i
     - run: sudo apt install tree
     - run: tree -a .
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: apk-dependency-graph-gradle-plugin.jar
+        path: build/libs/apk-dependency-graph-gradle-plugin.jar
