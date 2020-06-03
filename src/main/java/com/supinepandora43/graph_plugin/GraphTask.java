@@ -21,12 +21,17 @@ public class GraphTask extends DefaultTask {
 			path = "outputs" + s + "apk" + s + "debug" + s + "app-debug.apk";
 		}
 		path = getProject().getBuildDir() + s + path;
-		String filterText =
-			"{\n" +
-				"    \"package-name\": " + extension.packageName + ",\n" +
-				"    \"show-inner-classes\": " + extension.showInnerClasses + ",\n" +
-				"    \"ignored-classes\": " + extension.ignoredClasses.toString() + "\n" +
-				"}";
+//		String filterText =
+//			"{\n" +
+//				"    \"package-name\": " + extension.packageName + ",\n" +
+//				"    \"show-inner-classes\": " + extension.showInnerClasses + ",\n" +
+//				"    \"ignored-classes\": " + extension.ignoredClasses.toString() + "\n" +
+//				"}";
+		String filterText = "{\n" +
+			"    \"package-name\": \"\",\n" +
+			"    \"show-inner-classes\": false,\n" +
+			"    \"ignored-classes\": [] "+
+			"}\n";
 		File filterFile = getProject().file(getProject().getBuildDir() + s + "graph" + s + "filter.json");
 		try {
 			filterFile.getParentFile().mkdirs();
@@ -34,6 +39,9 @@ public class GraphTask extends DefaultTask {
 			FileWriter FW = new FileWriter(filterFile.getAbsolutePath());
 			FW.write(filterText);
 			FW.close();
+			File idk = getProject().file(getProject().getBuildDir()+s+"graph"+s+"gui"+s+"analyzed.js");
+			idk.getParentFile().mkdirs();
+			idk.createNewFile();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

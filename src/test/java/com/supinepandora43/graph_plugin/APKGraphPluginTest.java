@@ -32,6 +32,7 @@ public class APKGraphPluginTest {
 
 	@Test
 	public void GraphTask() {
+		System.out.println(this.project.getBuildDir().getAbsolutePath());
 		try {
 			ReadableByteChannel rbc = Channels.newChannel(new URL("https://github.com/SupinePandora43/Russian/releases/download/untagged-fe60576ceefbd6fd674b/app-debug.apk").openStream());
 			String s = File.separator;
