@@ -23,3 +23,5 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew jar
     - run: ./gradlew test -i
+    - run: sudo apt install tree
+    - run: tree -a .
